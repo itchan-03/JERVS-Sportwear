@@ -113,5 +113,4 @@ if(isset($_GET['id'])){
     </main>
 </div>
 </body>
-<script src="../../View/script/sidebarjs/sidebar.js"></script>
 </html>
