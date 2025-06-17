@@ -15,6 +15,14 @@
     $user = $result->fetch_assoc();
     //if the user is found we succesfully login to dashboard
     if($user && password_verify($password, $user['member_pass'])){
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+        $logStmt = $conn->prepare('INSERT INTO login_logs (member_id, ip_address, user_agent) VALUES (?, ?, ?)');
+        $logStmt->bind_param('iss', $user['member_id'], $ip, $user_agent);
+        $logStmt->execute();
+        $logStmt->close();
+
         session_start();
         $_SESSION['member'] = $user['member_id'];
         echo json_encode(['success' => true]);

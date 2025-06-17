@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'], $_POST['cu
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/universal.css">
     <link rel="stylesheet" href="../../assets/css/order.css">
-    <link rel="icon" href="../assets/img/logo-1.png" type="image/x-icon">
+    <link rel="icon" href="../../assets/img/logo-1.png" type="image/x-icon">
 </head>
 <body>
 <?php include('../partials/sidebar.php'); ?>
